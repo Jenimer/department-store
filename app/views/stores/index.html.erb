@@ -1,0 +1,7 @@
+<h1>Welcome to the Random stuff thrift store</h1>
+<%=link_to 'Create Store', new_store_path %>
+<ul>
+    <% @stores.each do |store| %>
+        <li><% link_to 'store.name', store %></li>
+    <% end %>
+</ul>
