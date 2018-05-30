@@ -1,4 +1,4 @@
-<h1><%= store.id ? 'Edit Store' : 'Create Store' %></h1>
+<h1><%= @store.id ? 'Edit Store' : 'Create Store' %></h1>
 <hr />
 <%= form_for @store do |f| %>
 <%= f.label :name %>

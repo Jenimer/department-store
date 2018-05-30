@@ -14,12 +14,14 @@ class StoresController < ApplicationController
   end
 
   def edit
+    render :form
   end
 
   def create
     @store = Store.new(store_params)
+    
     if @store.save
-      redirect_to stores_path
+      redirect_to @store
     else
       render :form
     end
@@ -27,7 +29,7 @@ class StoresController < ApplicationController
 
   def update
     if @store.update(store_params)
-      redirect_to store_path
+      redirect_to @store
     else
       render :form
     end
@@ -44,6 +46,6 @@ class StoresController < ApplicationController
     end
 
     def store_set
-     @store = Store.find(params[:id])
+      @store = Store.find(params[:id])
     end
 end
