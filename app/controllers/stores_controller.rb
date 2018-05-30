@@ -36,7 +36,7 @@ class StoresController < ApplicationController
   end
 
   def destroy
-    @store.destroy
+     Store.find(params[:id]).destroy
     redirect_to stores_path
   end
 
